@@ -1,0 +1,2 @@
+#!/bin/bash
+/bin/launchctl unload /System/Library/LaunchDaemons/net.iWatcher.myTunes.plist

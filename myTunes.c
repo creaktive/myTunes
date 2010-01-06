@@ -148,37 +148,6 @@ int main() {
 	if ((null = open("/dev/null", O_RDWR)) == -1)
 		err(1, "null");
 
-	switch (fork()) {
-		case -1:
-			err(1, "fork1");
-		case  0:
-			setsid();
-			switch (fork()) {
-				case -1:
-					err(1, "fork2");
-				case  0:
-					// chdir("/");
-					umask(0);
-
-					// close standart IO
-					close(0);
-					close(1);
-					close(2);
-
-					// open'em as /dev/null
-					dup2(null, 0);
-					dup2(null, 1);
-					dup2(null, 2);
-
-					break;
-				default:
-					return 0;
-			}
-			break;
-		default:
-			return 0;
-	}
-
 	pid = fork();
 	if (pid == -1)
 		err(1, "fork3");

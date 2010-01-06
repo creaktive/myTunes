@@ -1,14 +1,2 @@
 #!/bin/bash
-
-declare -a cydia
-cydia=($CYDIA)
-
-if [[ $1 == remove ]]; then
-  rm -Rf "/private/var/mobile/Media/myTunes"
-  if [[ ${CYDIA+@} ]]; then
-      eval "echo 'finish:restart' >&${cydia[0]}"
-  fi
-else
-  echo "postrm - skip restore files"
-fi
-#end script
+rm -Rf "/private/var/mobile/Media/myTunes"

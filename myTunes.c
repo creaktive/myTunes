@@ -1,7 +1,3 @@
-/*
-gcc -I/var/toolchain/sys30/usr/include -L/var/toolchain/sys30/usr/lib -lsqlite3 -O3 -o myTunes myTunes.c; strip myTunes; ldid -S myTunes
-*/
-
 #include <err.h>
 #include <dirent.h>
 #include <fcntl.h>

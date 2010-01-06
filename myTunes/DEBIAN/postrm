@@ -1,0 +1,11 @@
+#!/bin/bash
+
+declare -a cydia
+cydia=($CYDIA)
+
+if [[ $1 == remove ]]; then
+  rm -Rf "/private/var/mobile/Media/myTunes"
+else
+  echo "postrm - skip restore files"
+fi
+#end script

@@ -1,0 +1,12 @@
+Package: net.iWatcher.myTunes
+Name: myTunes
+Version: 0.1
+Architecture: iphoneos-arm
+Homepage: http://iwatcher.net/
+Author: Stanislaw Pusep <creaktive@gmail.com>
+Maintainer: Stanislaw Pusep <creaktive@gmail.com>
+Section: System
+Description: Gives you back the access to the media files stored on your device through the 'Media/myTunes' folder accessible via SCP, iPhoneBrowser or iFile internal server.
+	After installation, browse '/private/var/mobile/Media/myTunes' for you tracks.
+	Please note that the purpose of this application is backup; changes made through iTunes will be reflected, however uploading a track into 'myTunes' folder won't
+	make it accessible through iPod app (neither deleting will remove it from the playlist)!

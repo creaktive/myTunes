@@ -5,7 +5,7 @@ Maintainer: BigBoss <bigboss@thebigboss.org>
 Name: myTunes
 Package: net.iwatcher.mytunes
 Section: System
-Installed-Size: 18
+Installed-Size: 56
 Version: 0.2
 Architecture: iphoneos-arm
 Description: Access iTunes media files stored on your device through the 'Media/myTunes' folder accessible via SCP, iPhoneBrowser or iFile internal server.

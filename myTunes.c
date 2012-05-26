@@ -26,9 +26,7 @@ along with myTunes.  If not, see <http://www.gnu.org/licenses/>.
 #include <sys/stat.h>
 
 #define MEDIA	"/private/var/mobile/Media"
-#define LIBFILE	MEDIA "/iTunes_Control/iTunes/iTunes Library.itlp/Library.itdb"
-#define LOCFILE	MEDIA "/iTunes_Control/iTunes/iTunes Library.itlp/Locations.itdb"
-#define ITFILES	MEDIA "/iTunes_Control/Music"
+#define LIBFILE	MEDIA "/iTunes_Control/iTunes/MediaLibrary.sqlitedb"
 #define MYTUNES	MEDIA "/myTunes"
 
 int kq, pid;
@@ -82,6 +80,7 @@ static int callback(void *empty, int argc, char **argv, char **col) {
 	memset(title, '\0', sizeof(title));
 	for (i = 0, p = argv[1]; (i < sizeof(title) - 1) && (*p != '\0'); i++, p++)
 		switch (*p) {
+			case '/':
 			case ':':
 			case '*':
 			case '?':
@@ -136,7 +135,6 @@ void fix(int sig) {
 	signal(SIGUSR1, SIG_IGN);
 	signal(SIGALRM, SIG_IGN);
 
-	close(wait(LOCFILE));
 	close(wait(LIBFILE));
 
 	mkdir(MYTUNES, S_IRWXU | S_IRWXG | S_IRWXO);
@@ -146,9 +144,21 @@ void fix(int sig) {
 	if (sqlite3_open(LIBFILE, &db))
 		warn("sqlite3_open %s", sqlite3_errmsg(db));
 	else if (
-		query(db, "ATTACH '" LOCFILE "' AS loc", NULL) &&
-		query(db, "SELECT '" ITFILES "/' || location, title || SUBSTR(location, 9) FROM item LEFT JOIN loc.location ON (pid = item_pid) ORDER BY location ASC", callback) &&
-		query(db, "DETACH DATABASE loc", NULL)
+        query(
+            db,
+            " SELECT"
+            "     '" MEDIA "/' || path || '/' || location,"
+            "     album_artist || ' - ' || album || ' - ' || title || SUBSTR(location, 5)"
+            " FROM item"
+            " LEFT JOIN base_location"
+            "     ON item.base_location_id = base_location.base_location_id"
+            " LEFT JOIN item_extra"
+            "     ON item.item_pid = item_extra.item_pid"
+            " LEFT JOIN album_artist"
+            "     ON item.album_artist_pid = album_artist.album_artist_pid"
+            " LEFT JOIN album"
+            "     ON item.album_pid = album.album_pid",
+            callback)
 	)
 		ok = 1;
 

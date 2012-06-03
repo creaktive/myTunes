@@ -91,9 +91,14 @@ static int callback(void *empty, int argc, char **argv, char **col) {
 	for (i = 0, p = argv[1]; (i < PATH_MAX) && (*p != '\0'); i++, p++)
 		switch (*p) {
 			case '/':
-			case ':':
-			case '*':
+			case '\\':
 			case '?':
+			case '*':
+			case ':':
+			case '|':
+			case '"':
+			case '<':
+			case '>':
 				title[i] = '_';
 				break;
 			default:

@@ -18,16 +18,26 @@
 #include <err.h>
 #include <dirent.h>
 #include <fcntl.h>
+#include <limits.h>
 #include <signal.h>
 #include <sqlite3.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/event.h>
 #include <sys/stat.h>
+#include <unistd.h>
 
 #define MEDIA	"/private/var/mobile/Media"
 #define LIBFILE	MEDIA "/iTunes_Control/iTunes/MediaLibrary.sqlitedb"
 #define MYTUNES	MEDIA "/myTunes"
+
+int wait(char *file);
+int mon(int fd);
+void postpone(int sig);
+static int callback(void *empty, int argc, char **argv, char **col);
+int query(sqlite3 *db, char *sql, void *cb);
+void clean(void);
+void fix(int sig);
 
 int kq, pid;
 
@@ -70,7 +80,7 @@ void postpone(int sig) {
 
 static int callback(void *empty, int argc, char **argv, char **col) {
 	char *p;
-	char title[256];
+	char title[PATH_MAX + 16];
 	unsigned int i;
 	struct stat fs;
     
@@ -78,7 +88,7 @@ static int callback(void *empty, int argc, char **argv, char **col) {
 		return 0;
     
 	memset(title, '\0', sizeof(title));
-	for (i = 0, p = argv[1]; (i < sizeof(title) - 1) && (*p != '\0'); i++, p++)
+	for (i = 0, p = argv[1]; (i < PATH_MAX) && (*p != '\0'); i++, p++)
 		switch (*p) {
 			case '/':
 			case ':':

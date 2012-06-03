@@ -1,4 +1,4 @@
-*.bz2
-*.deb
-*.gz
-myTunes/usr/libexec/myTunes
+myTunes/Package/usr/libexec/myTunes
+LatestBuild
+Packages
+.DS_Store

@@ -1,0 +1,314 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1866E18B157BB0A000C56527 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 1866E18A157BB0A000C56527 /* main.c */; };
+		1866E192157BB0FD00C56527 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1866E191157BB0FD00C56527 /* libsqlite3.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1866E17D157BB0A000C56527 /* myTunes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = myTunes; sourceTree = BUILT_PRODUCTS_DIR; };
+		1866E184157BB0A000C56527 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		1866E186157BB0A000C56527 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		1866E18A157BB0A000C56527 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		1866E191157BB0FD00C56527 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		1866E197157BB26E00C56527 /* postinst */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = postinst; path = Package/DEBIAN/postinst; sourceTree = "<group>"; };
+		1866E198157BB26E00C56527 /* postrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = postrm; path = Package/DEBIAN/postrm; sourceTree = "<group>"; };
+		1866E199157BB26E00C56527 /* prerm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = prerm; path = Package/DEBIAN/prerm; sourceTree = "<group>"; };
+		187E9636157BB53B00C1D363 /* net.iWatcher.myTunes.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = net.iWatcher.myTunes.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1866E17A157BB0A000C56527 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1866E192157BB0FD00C56527 /* libsqlite3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1866E172157BB0A000C56527 = {
+			isa = PBXGroup;
+			children = (
+				1866E191157BB0FD00C56527 /* libsqlite3.dylib */,
+				1866E180157BB0A000C56527 /* mytunes */,
+				1866E17E157BB0A000C56527 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1866E17E157BB0A000C56527 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1866E17D157BB0A000C56527 /* myTunes */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1866E180157BB0A000C56527 /* mytunes */ = {
+			isa = PBXGroup;
+			children = (
+				1866E18A157BB0A000C56527 /* main.c */,
+				1866E181157BB0A000C56527 /* Package */,
+				1866E185157BB0A000C56527 /* Supporting Files */,
+			);
+			path = mytunes;
+			sourceTree = "<group>";
+		};
+		1866E181157BB0A000C56527 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				187E9633157BB53B00C1D363 /* System */,
+				1866E182157BB0A000C56527 /* DEBIAN */,
+				1866E187157BB0A000C56527 /* usr */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		1866E182157BB0A000C56527 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				1866E197157BB26E00C56527 /* postinst */,
+				1866E198157BB26E00C56527 /* postrm */,
+				1866E199157BB26E00C56527 /* prerm */,
+				1866E184157BB0A000C56527 /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		1866E185157BB0A000C56527 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1866E186157BB0A000C56527 /* PackageVersion.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1866E187157BB0A000C56527 /* usr */ = {
+			isa = PBXGroup;
+			children = (
+				1866E196157BB1D300C56527 /* libexec */,
+			);
+			name = usr;
+			sourceTree = "<group>";
+		};
+		1866E196157BB1D300C56527 /* libexec */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = libexec;
+			path = Package/usr/libexec;
+			sourceTree = "<group>";
+		};
+		187E9633157BB53B00C1D363 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				187E9634157BB53B00C1D363 /* Library */,
+			);
+			name = System;
+			path = Package/System;
+			sourceTree = "<group>";
+		};
+		187E9634157BB53B00C1D363 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				187E9635157BB53B00C1D363 /* LaunchDaemons */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		187E9635157BB53B00C1D363 /* LaunchDaemons */ = {
+			isa = PBXGroup;
+			children = (
+				187E9636157BB53B00C1D363 /* net.iWatcher.myTunes.plist */,
+			);
+			path = LaunchDaemons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1866E17C157BB0A000C56527 /* mytunes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1866E18E157BB0A000C56527 /* Build configuration list for PBXNativeTarget "mytunes" */;
+			buildPhases = (
+				1866E179157BB0A000C56527 /* Sources */,
+				1866E17A157BB0A000C56527 /* Frameworks */,
+				1866E17B157BB0A000C56527 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mytunes;
+			productName = mytunes;
+			productReference = 1866E17D157BB0A000C56527 /* myTunes */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1866E174157BB0A000C56527 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = iWatcher.net;
+			};
+			buildConfigurationList = 1866E177157BB0A000C56527 /* Build configuration list for PBXProject "mytunes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1866E172157BB0A000C56527;
+			productRefGroup = 1866E17E157BB0A000C56527 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1866E17C157BB0A000C56527 /* mytunes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1866E17B157BB0A000C56527 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1866E179157BB0A000C56527 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1866E18B157BB0A000C56527 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1866E18C157BB0A000C56527 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = "$(iOSOpenDevPath)/frameworks/**";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		1866E18D157BB0A000C56527 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = "$(iOSOpenDevPath)/frameworks/**";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		1866E18F157BB0A000C56527 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INSTALL_PATH = /usr/libexec;
+				PRODUCT_NAME = myTunes;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = NO;
+				iOSOpenDevRespringOnInstall = NO;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+		1866E190157BB0A000C56527 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INSTALL_PATH = /usr/libexec;
+				PRODUCT_NAME = myTunes;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = NO;
+				iOSOpenDevRespringOnInstall = NO;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1866E177157BB0A000C56527 /* Build configuration list for PBXProject "mytunes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1866E18C157BB0A000C56527 /* Release */,
+				1866E18D157BB0A000C56527 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1866E18E157BB0A000C56527 /* Build configuration list for PBXNativeTarget "mytunes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1866E18F157BB0A000C56527 /* Release */,
+				1866E190157BB0A000C56527 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1866E174157BB0A000C56527 /* Project object */;
+}

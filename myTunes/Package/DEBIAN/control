@@ -1,0 +1,16 @@
+Package: net.iwatcher.mytunes
+Name: myTunes
+Version: 0.3-1
+Description: Access iTunes media files stored on your device through the 'Media/myTunes' folder accessible via SCP, iPhoneBrowser or iFile internal server.
+Section: System
+Depends: firmware (>= 5.0)
+Conflicts: 
+Replaces: 
+Priority: optional
+Architecture: iphoneos-arm
+Author: Stanislaw Pusep <creaktive@gmail.com>
+dev: iwatcherHomepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=mytunesData
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=mytunesData
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Icon: 
+Sponsor: thebigboss.org <http://thebigboss.org>

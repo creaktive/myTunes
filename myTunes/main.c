@@ -112,7 +112,7 @@ static int callback(void *empty, int argc, char **argv, char **col) {
 
 int query(sqlite3 *db, char *sql, void *cb) {
 	int i;
-	char *err;
+	char *err = NULL;
     
 	for (i = 0; i < 5; i++)
 		if (sqlite3_exec(db, sql, cb, 0, &err) == SQLITE_OK)
@@ -163,7 +163,7 @@ void fix(int sig) {
                    db,
                    " SELECT"
                    "     '" MEDIA "/' || path || '/' || location,"
-                   "     album_artist || ' - ' || album || ' - ' || title || SUBSTR(location, 5)"
+                   "     COALESCE(album_artist, 'Unknown Artist') || ' - ' || COALESCE(album, 'Unknown Album') || ' - ' || COALESCE(title, 'Unknown Title') || SUBSTR(location, 5)"
                    " FROM item"
                    " LEFT JOIN base_location"
                    "     ON item.base_location_id = base_location.base_location_id"
